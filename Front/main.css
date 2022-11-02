@@ -1,0 +1,115 @@
+    /* index 페이지 css */
+
+    header { z-index: 1; position: fixed; width: 100%; }
+
+    footer { background: #F7F7F8; }
+
+    a { text-decoration: none; color: rgb(0, 0, 0); }
+
+    .card-text { color: rgb(84, 84, 86); }
+
+    #card { min-width: 200px; } 
+
+    #cardDiv { margin: 0 auto; height: 60%; padding-top: 3%; padding-bottom: 10%; }
+
+    #textDiv { max-width: 80%; margin: 0 auto; }
+
+    #chart_div { border: 1px solid black; height: 98%; }
+
+    #inside_wrapper_div4 { border: 1px solid black; margin: 0 auto; height: 100%; width: 70%; }
+
+    #rankDiv { height: 60%; margin: 0 auto; margin-bottom: 3%; }
+
+    html { font-family: "Noto Sans KR", sans-serif; }
+
+    .wrapper-div { position: relative; max-width: 1280px; margin: 0 auto;}
+
+    #wrapper_div1, #wrapper_div2, #wrapper_div3, #wrapper_div4, #wrapper_div5 { 
+      height: auto; 
+      position: relative; 
+      display: flex;
+      flex-direction: column;
+    }
+
+    #wrapper_div1, #wrapper_div3, #wrapper_div5 { 
+      border: 1px solid black; 
+    }
+
+    #wrapper_div2, #wrapper_div4 {
+      border: 1px solid black;
+      background: #F7F7F8;
+      height: auto;
+      position: relative;
+    }
+
+    .nameSpan {
+      text-align: center;
+      /* color: rgb(255, 255, 255); */
+      color: black;
+      font-size: 3.8rem;
+      font-family: "Noto Sans KR", sans-serif;
+      line-height: normal;
+      word-break: keep-all;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      touch-action: manipulation;
+      font-weight: 500;
+    }
+
+/* ########### 여기서부터 
+    cloudChart & rankingDiv 스타일 ########### */
+
+    .style__List-sc-bte0qo-2 dlzZdX { font-size: 10px; font-family: "Noto Sans KR", sans-serif; line-height: normal; word-break: keep-all; 
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: manipulation; width: 30%; height: 36rem; overflow-y: scroll; }
+
+    .jHMAQF { height: 3.6rem; box-sizing: border-box; padding: 0.8rem 0.6rem 0.8rem 0rem; border-bottom: 0.1rem solid rgb(241, 241, 243); display: flex;
+      -webkit-box-align: center; align-items: center; -webkit-box-pack: justify; justify-content: space-between; }
+    
+    .jnpAn { white-space: nowrap; }
+
+    .iWxOhy { width: 4rem; display: inline-block; text-align: center; font-size: 1.3rem; color: rgb(84, 84, 86); cursor: default; }
+
+    .bFxVkK { width: 100%; margin-right: 0.8rem; white-space: nowrap; overflow-x: scroll; }
+
+    .bFxVkK * { color: rgb(84, 84, 86); }
+
+    .giyaCH { color: rgb(81, 169, 243); outline: none; cursor: pointer; display: inline-flex; -webkit-box-align: center; align-items: center; text-decoration: none; }
+
+    .lmTsWA { font-size: 0.8rem; color: rgb(174, 174, 176); }
+
+    .lmTsWA svg { width: 0.8rem !important; height: 0.8rem !important; }
+
+    .UkVPi { text-align: right; font-size: 0.8rem; color: rgb(81, 169, 243); cursor: default; }
+
+    .bUJbre { width: 4rem; display: inline-block; text-align: center; font-size: 1.0rem; color: rgb(84, 84, 86); cursor: default; }
+
+
+/* ########### cloudChart & rankingDiv 스타일 끝 ########### */
+
+    #img_div {
+      width: 300px; height: 300px; margin-top: 5%; margin-left: auto; margin-right: auto;
+    }
+
+    .rankingDiv {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    #joinBtnDiv {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 5%;
+    }
+
+    /* 768px(md사이즈)이하에서 안봄*/
+    @media screen and (max-width: 768px) {
+      #cloudChart {
+        display: none;
+      }
+    }
+    /* navbar 880이하에서 안봄 */
+    @media screen and (max-width: 880px) {
+      #navbarDropdownMenuLink{
+      display: none;
+    }
