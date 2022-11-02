@@ -7,22 +7,24 @@
     a { text-decoration: none; color: rgb(0, 0, 0); }
 
     .card-text { color: rgb(84, 84, 86); }
-
     #card { min-width: 200px; } 
-
+    div .card { text-align: left;}
+    div .card-body { margin: 2%; }
     #cardDiv { margin: 0 auto; height: 60%; padding-top: 3%; padding-bottom: 10%; }
 
     #textDiv { max-width: 80%; margin: 0 auto; }
 
     #chart_div { border: 1px solid black; height: 98%; }
 
-    #inside_wrapper_div4 { border: 1px solid black; margin: 0 auto; height: 100%; width: 70%; }
+    #inside_wrapper_div4 { border: 1px solid black; margin: 0 auto; }
 
     #rankDiv { height: 60%; margin: 0 auto; margin-bottom: 3%; }
 
     html { font-family: "Noto Sans KR", sans-serif; }
 
     .wrapper-div { position: relative; max-width: 1280px; margin: 0 auto;}
+
+    .wrapper-div-color { text-align: center; background: #F7F7F8; }
 
     #wrapper_div1, #wrapper_div2, #wrapper_div3, #wrapper_div4, #wrapper_div5 { 
       height: auto; 
@@ -31,12 +33,11 @@
       flex-direction: column;
     }
 
-    #wrapper_div1, #wrapper_div3, #wrapper_div5 { 
+    /* #wrapper_div1, #wrapper_div2, #wrapper_div3, #wrapper_div4, #wrapper_div5 { 
       border: 1px solid black; 
-    }
+    } */
 
     #wrapper_div2, #wrapper_div4 {
-      border: 1px solid black;
       background: #F7F7F8;
       height: auto;
       position: relative;
@@ -86,11 +87,11 @@
 /* ########### cloudChart & rankingDiv 스타일 끝 ########### */
 
     #img_div {
-      width: 300px; height: 300px; margin-top: 5%; margin-left: auto; margin-right: auto;
+      width: 300px; height: 300px; margin-top: 10%; margin-left: auto; margin-right: auto;
     }
 
-    .rankingDiv {
-      width: 70%;
+    div #rankingDiv {
+      width: 40%;
       margin: 0 auto;
     }
 
@@ -99,7 +100,6 @@
       display: flex;
       justify-content: center;
       margin: 0 auto;
-      padding-bottom: 5%;
     }
 
     /* 768px(md사이즈)이하에서 안봄*/
@@ -107,9 +107,13 @@
       #cloudChart {
         display: none;
       }
+      .py-5 {
+        display: none;
+      }
     }
     /* navbar 880이하에서 안봄 */
     @media screen and (max-width: 880px) {
       #navbarDropdownMenuLink{
-      display: none;
+        display: none;
     }
+  }
