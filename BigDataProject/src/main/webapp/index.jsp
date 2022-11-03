@@ -24,7 +24,8 @@
 
   <!-- style.css -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
-  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -124,11 +125,11 @@
     <!-- 버튼 그룹 -->
     <article class="text-center mb-3 col d-none d-lg-block">
       <div class="btn-group ">
-        <button type="button" class="btn btn-outline-light">10대</button>
-        <button type="button" class="btn btn-outline-light">20대</button>
-        <button type="button" class="btn btn-outline-light">30대</button>
-        <button type="button" class="btn btn-outline-light">40대</button>
-        <button type="button" class="btn btn-outline-light">50대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10Age()" >10대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20Age()">20대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30Age()">30대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40Age()">40대</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50Age()">50대</button>
       </div>
     </article>
 
@@ -145,8 +146,9 @@
 
     <!-- 공백 채울거 생각하기-->
     <article class="container-fluid bg-danger">
-      <div class="row">
-        <div class="col-12">
+      <div class="row" style="background-color:white;">
+        <div class="col-12" style="width:600px;height:600px; margin:0 auto;">
+        <!-- 
           <div class="py-5"></div>
           <div class="py-5"></div>
           <div class="py-5"></div>
@@ -155,6 +157,15 @@
           <div class="py-5"></div>
           <div class="py-5"></div>
           <div class="py-5"></div>
+         -->
+         <!-- 차트 들어갈 자리 -->
+        
+        	<canvas id="myChart" width="50%" height="50%"></canvas>
+         
+         
+         <!-- 차트 들어갈 자리 끝 -->
+         
+         
         </div>
       </div>
     </article>
@@ -530,6 +541,203 @@
 $(document).ready(function () {  
   $("#no-fouc").delay(250).animate({"opacity": "1"}, 250);
 });
+
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    })
+
+function see10Age(){
+    axios({
+        url:'/chartController/ChartController.cco?year=year10',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 6 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+        
+};
+
+function see20Age(){
+    axios({
+        url:'/chartController/ChartController.cco?year=year20',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 6 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+
+
+};
+
+
+function see30Age(){
+    axios({
+        url:'/chartController/ChartController.cco?year=year30',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 6 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+
+
+};
+
+
+function see40Age(){
+    axios({
+        url:'/chartController/ChartController.cco?year=year40',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 6 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+
+
+};
+
+
+
+
+function see50Age(){
+    axios({
+        url:'/chartController/ChartController.cco?year=year50',
+        method:'get'
+    })
+    .then((res)=>{
+        console.log(res.data);
+
+        var valArr = [] ;
+
+        Object.keys(res.data).forEach(item => {
+
+            myChart.data.labels[ valArr.length ] = item ;
+
+            valArr.push(res.data[item]);
+
+        });;
+
+        for( var i = 0 ; i < 6 ; i++ ) {
+
+            myChart.data.datasets[ 0 ].data[i] = valArr[ i ] ;
+
+        }
+
+        myChart.update();
+
+    })
+
+};
+
 </script>
 <!-- 폰트 깜박임 방지 끝 -->
 

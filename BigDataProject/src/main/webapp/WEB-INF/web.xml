@@ -30,4 +30,17 @@
    <url-pattern>*.bo</url-pattern>
   </servlet-mapping>
   
+  
+  
+  <servlet>
+     <servlet-name>ChartController</servlet-name>
+     <servlet-class>com.daunter.chartController.ChartController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>ChartController</servlet-name>
+   <url-pattern>*.cco</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

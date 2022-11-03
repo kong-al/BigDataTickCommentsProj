@@ -24,7 +24,7 @@ public class BoardFrontController extends HttpServlet {
 	
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requestURI = req.getRequestURI();
-		
+		System.out.println("오잉 " + requestURI);
 		ActionForward forward = null;
 		
 		switch(requestURI) {
