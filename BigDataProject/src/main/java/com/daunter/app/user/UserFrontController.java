@@ -32,11 +32,17 @@ public class UserFrontController extends HttpServlet {
 			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
 	    	break;
 		case "/user/UserJoinOk.us": 
-			try {forward = new UserJoinOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
+			try {forward = new UserJoinOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserJoinOk.us에서 오류");}
 	    	break;
 		case "/user/UserLogin.us":
-	        forward = new ActionForward(false, "/app/user/login.jsp");
-	        break;
+			forward = new ActionForward(false, "/index.jsp");
+			break;
+		case "/user/UserLoginOk.us":
+			try {forward = new UserLoginOkAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLoginOk.us에서 오류");}
+	    	break;
+		case "/user/UserLogout.us":
+			try {forward = new UserLogoutAction().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/UserLogout.us에서 오류");}
+			break;
 		}
 		
 		if(forward != null) {

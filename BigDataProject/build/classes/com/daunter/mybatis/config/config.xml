@@ -20,7 +20,7 @@
 	 </environments>
 	 
 	 <mappers>
-		<!-- <mapper resource="com/daunter/mybatis/sql/user.xml"/> -->
+		<mapper resource="com/daunter/mybatis/sql/user.xml"/>
 	 	<mapper resource="com/daunter/mybatis/sql/board.xml"/>
 	 </mappers>
 	 
