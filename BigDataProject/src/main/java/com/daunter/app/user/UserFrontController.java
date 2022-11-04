@@ -29,6 +29,7 @@ public class UserFrontController extends HttpServlet {
 		
 		switch(requestURI) {
 		case "/user/CheckUsernameOk.us": 
+			System.out.println("들어옴");
 			try {forward = new CheckUsernameOk().execute(req, resp);} catch(Exception e) {System.out.println(e); System.out.println("/user/CheckUsernameOk.us에서 오류");}
 	    	break;
 		case "/user/UserJoinOk.us": 

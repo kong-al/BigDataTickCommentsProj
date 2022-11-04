@@ -329,22 +329,24 @@
               <!-- ################간편 로그인################### -->
             </div>
             <!-- ---or--- 한줄 넣어야함-->
-
+            
+           </form>
+			<form method="post" action="${pageContext.request.contextPath}/user/UserLoginOk.us" name="loginForm">
             <div class="mb-3">
               <label for="user_name" class="col-form-label">사용자 이름 또는 이메일</label>
-              <input type="text" class="form-control" id="user_name" placeholder="username or email">
+              <input type="text" class="form-control" name="user_name" id="user_name" placeholder="username">
             </div>
             <div class="mb-3">
               <label for="user_pw" class="col-form-label">비밀번호</label>
-              <input type="password" class="form-control" id="user_pw" placeholder="Password">
+              <input type="password" class="form-control" name="user_pw" id="user_pw" placeholder="Password">
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
           <!-- 비밀번호 찾기 -->
           <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#findPwModal" data-bs-dismiss="modal">비밀번호를 잊으셨나요?</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          <button type="button" class="btn btn-primary">로그인</button>
+           <input type="button" value="로그인" class="btn btn-primary" onclick="loginSubmit()" />
+        </div>
+          </form>
         </div>
       </div>
     </div>
@@ -362,13 +364,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body"> 
-          <form action="${pageContext.request.contextPath}/user/UserJoinOk.us" method="post">
+          <form action="${pageContext.request.contextPath}/user/UserJoinOk.us" method="post" name="joinForm">
             <div class="mb-3">
               <label for="user_email" class="col-form-label">이메일 주소</label>
               <input type="text" class="form-control" name="user_email" id="user_email" placeholder="Email">
             </div>
             <div class="mb-3">
-              <label for="user_name" class="col-form-label">사용자 이름</label>
+              <label for="user_name" class="col-form-label">사용자 이름<span id="userCheck_text" style="font-size:0.7em;"></span></label>
               <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Username">
             </div>
             <div class="mb-3">
@@ -377,11 +379,11 @@
             </div>
             <div class="mb-3">
               <label for="birth_year" class="col-form-label">생년월일</label>
-              <input type="text" class="form-control" name="birth_year" id="birth_year">
+              <input type="date" class="form-control" name="birth_year" id="birth_year">
             </div>
             <div class="mb-3">
-            	<input type="checkbox" class="" name="term1" id="term1"><label for="term1">&ensp; 이벤트 등 프로모션 알림 메일 수신에 동의합니다. (선택)</label><br>
-            	<input type="checkbox" class="" name="term2" id="term2">&ensp;
+            	<input type="checkbox" class="" name="term1" id="term1" class="terms"><label for="term1">&ensp; 이벤트 등 프로모션 알림 메일 수신에 동의합니다. (선택)</label><br>
+            	<input type="checkbox" class="" name="term2" id="term2" class="terms">&ensp;
               	<a href="" target="_blank" style="text-decoration: none">개인정보처리방침
                 	<svg class="style__SVG-sc-17sew62-0 eWSRQr" size="1" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 0.7rem; height: 0.7rem;">
                   		<path fill="currentColor" d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"></path>
@@ -397,7 +399,7 @@
             <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
           <!-- <button type="button" class="btn btn-primary">회원가입</button> -->
-          <input type="submit" value="회원가입" class="btn btn-primary" />
+          <input type="button" value="회원가입" class="btn btn-primary" onclick="formSubmit()" />
         </div>
           </form>
         </div>
@@ -650,5 +652,7 @@ function see50Age(){
 
 <!-- 부트스트랩 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script src="${pageContext.request.contextPath}/app/user/join.js"></script>
 </body>
 </html>
