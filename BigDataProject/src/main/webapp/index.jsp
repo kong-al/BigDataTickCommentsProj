@@ -79,11 +79,11 @@
     <!-- class="col d-none d-lg-block" -->
     <article class="text-center pb-3">
       <div class="btn d-block d-lg-none">
-        <button type="button" class="btn btn-outline-light">10</button>
-        <button type="button" class="btn btn-outline-light">20</button>
-        <button type="button" class="btn btn-outline-light">30</button>
-        <button type="button" class="btn btn-outline-light">40</button>
-        <button type="button" class="btn btn-outline-light">50</button>
+        <button type="button" class="btn btn-outline-light" onclick="see10Age()">10</button>
+        <button type="button" class="btn btn-outline-light" onclick="see20Age()">20</button>
+        <button type="button" class="btn btn-outline-light" onclick="see30Age()">30</button>
+        <button type="button" class="btn btn-outline-light" onclick="see40Age()">40</button>
+        <button type="button" class="btn btn-outline-light" onclick="see50Age()">50</button>
       </div>
     </article>
 
